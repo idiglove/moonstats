@@ -1,5 +1,5 @@
 import { Express } from 'express'
-const Binance = require('node-binance-api')
+import SpotOrders from './../../classes/SpotOrders/SpotOrders'
 
 class BinanceTradesControllers {
   private app: Express | null
@@ -24,9 +24,11 @@ class BinanceTradesControllers {
   getMyTrades() {
     if (this.app) {
       this.app.get('/', (_, res) => {
-        this.binance.trades('SNMBTC', (error, trades, symbol) => {
-          console.info(symbol + ' trade history', trades)
-        })
+        // this.binance.trades('SNMBTC', (error, trades, symbol) => {
+        //   console.info(symbol + ' trade history', trades)
+        // })
+        const spotOrders = new SpotOrders()
+        spotOrders.parseCsv()
         res.status(200).send('success')
       })
     }

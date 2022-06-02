@@ -1,6 +1,6 @@
 import express from 'express'
 
-import BinanceTradesControllers from './controllers/binance/trades'
+import BinanceTradesControllers from './src/controllers/binance/trades'
 
 const app = express()
 const port = 3009
