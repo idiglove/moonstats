@@ -9,14 +9,17 @@ export type SpotOrderRow = {
   'Fee Coin': string
 }
 
-export type PNL = {
-  [key: string]: Array<{
-    type: string
-    date: string
-    price: string
-    amount: string
-    total: string
-    fee: string
-    feeCoin: string
-  }>
+export type SpotOrderPNL = {
+  [key: string]: Array<SpotOrderType>
+}
+
+export type SpotOrderType = {
+  market?: string
+  type: string
+  date: string
+  price: string
+  amount: string
+  total: string
+  fee: string
+  feeCoin: string
 }
